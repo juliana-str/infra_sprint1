@@ -6,11 +6,11 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = VERY_SECRET_KEY
+SECRET_KEY = f'VERY_SECRET_KEY'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['84.201.138.253', '127.0.0.1', 'localhost', 'my-kittygram.zapto.org']
+ALLOWED_HOSTS = ['158.160.30.4', '127.0.0.1', 'localhost', 'my-kittygram.zapto.org']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -92,11 +92,11 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_URL = '/static_backend/'
-STATIC_ROOT = BASE_DIR/ '/static_backend/'
+STATIC_URL = 'static_backend'
+STATIC_ROOT = BASE_DIR/ 'static_backend'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / '/var/www/kittygram/media/'
+MEDIA_ROOT = '/var/www/kittygram/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

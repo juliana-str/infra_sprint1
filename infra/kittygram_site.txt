@@ -1,0 +1,5 @@
+IP: 158.160.30.4;
+name_taski: https://taskieducation.hopto.org/;
+name_kittygram: https://my-kittygram.zapto.org/;
+login: admin;
+password: 01021983; 
