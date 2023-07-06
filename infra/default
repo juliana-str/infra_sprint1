@@ -39,7 +39,6 @@ server {
 
 
 server {
-    listen 90;
     server_name my-kittygram.zapto.org;
 
     location /api/ {
@@ -66,5 +65,17 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/my-kittygram.zapto.org/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = my-kittygram.zapto.org) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name 158.160.30.4 my-kittygram.zapto.org;
+    listen 90;
+    return 404; # managed by Certbot
 
 }

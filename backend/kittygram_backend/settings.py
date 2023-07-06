@@ -2,15 +2,16 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = f'VERY_SECRET_KEY'
+SECRET_KEY = os.getenv('SECRET_KEY', '1234')
 
-DEBUG = False
+DEBUG = bool(os.getenv('DEBUG', 'False'))
 
-ALLOWED_HOSTS = ['158.160.30.4', '127.0.0.1', 'localhost', 'my-kittygram.zapto.org']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
 
 INSTALLED_APPS = [
     'django.contrib.admin',
